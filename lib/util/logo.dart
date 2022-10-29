@@ -1,28 +1,63 @@
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 Widget logo(double maxWidth) {
-  double logoWidth = 600;
-  double logoHeight = 150;
-  double sizeOfFont = 30;
+  double logoWidthBrocast = 800;
+  double logoWidth = 300;
+  double logoHeight = 75;
+  double sizeOfFont = 15;
   if (maxWidth < 800) {
-    logoWidth = (maxWidth/5)*4;
-    logoHeight = maxWidth/6;
-    sizeOfFont = 10;
+    logoWidth = (maxWidth/10)*4;
+    logoHeight = maxWidth/12;
+    sizeOfFont = 5;
+    logoWidthBrocast = maxWidth;
   }
   return Column(
       children: [
         SizedBox(
-          height: logoHeight,
-          width: logoWidth-50,
+          height: 250,
+          width: logoWidthBrocast,
           child: const Image(
-            image: AssetImage("assets/images/Zwaar.png"),
+            image: AssetImage("assets/images/brocast_transparent.png"),
           ),
         ),
         Text(
-            "       Developers",
-            style: TextStyle(color: const Color(0xff949494), fontSize: sizeOfFont, fontWeight: FontWeight.bold)
+            "Brocast",
+            style: TextStyle(color: const Color(0xff949494), fontSize: 35)
+        ),
+        SizedBox(height: 30),
+        Text(
+            "From",
+            style: TextStyle(color: const Color(0xff949494), fontSize: 10, fontWeight: FontWeight.bold)
+        ),
+        InkWell(
+          onTap: () {
+            final Uri url = Uri.parse('https://zwaar.dev');
+            _launchUrl(url);
+          },
+          child: Column(
+            children: [
+              SizedBox(
+                height: logoHeight,
+                width: logoWidth-50,
+                child: const Image(
+                  image: AssetImage("assets/images/Zwaar.png"),
+                ),
+              ),
+              Text(
+                  "       Developers",
+                  style: TextStyle(color: const Color(0xff949494), fontSize: sizeOfFont, fontWeight: FontWeight.bold)
+              )
+            ],
+          ),
         )
       ]
   );
+}
+
+Future<void> _launchUrl(Uri url) async {
+  if (!await launchUrl(url)) {
+    throw 'Could not launch $url';
+  }
 }

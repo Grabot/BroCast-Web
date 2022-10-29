@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../util/app_bar.dart';
+import '../util/logo.dart';
 
 
 class Contact extends StatefulWidget {
@@ -26,14 +27,19 @@ class _ContactState extends State<Contact> {
             children: <Widget>[
               logo(width),
               Container(
+                width: width,
                 padding: const EdgeInsets.all(40.0),
                 child: SelectionArea(
                   child: Column(
                     children: const [
-                      SizedBox(height: 200),
+                      SizedBox(height: 50),
                       Text(
-                        "Thanks for Visiting Zwaar Developers",
+                        "Thanks for Visiting the Brocast page",
                         style: TextStyle(color: Color(0xfff1f1f1), fontSize: 20)
+                      ),
+                      Text(
+                          "Brocast is made with passion and emotion by the team at Zwaar Developers",
+                          style: TextStyle(color: Color(0xfff1f1f1), fontSize: 20)
                       ),
                       SizedBox(height: 60),
                       Text(
@@ -61,30 +67,5 @@ class _ContactState extends State<Contact> {
     );
   }
 
-  Widget logo(double maxWidth) {
-    double logoWidth = 600;
-    double logoHeight = 150;
-    double sizeOfFont = 30;
-    if (maxWidth < 800) {
-      logoWidth = (maxWidth/5)*4;
-      logoHeight = maxWidth/6;
-      sizeOfFont = 10;
-    }
-    return Column(
-          children: [
-            SizedBox(
-              height: logoHeight,
-              width: logoWidth-50,
-              child: const Image(
-                image: AssetImage("assets/images/Zwaar.png"),
-              ),
-            ),
-            Text(
-                "       Developers",
-                style: TextStyle(color: const Color(0xff949494), fontSize: sizeOfFont, fontWeight: FontWeight.bold)
-            )
-          ]
-      );
-  }
 }
 
