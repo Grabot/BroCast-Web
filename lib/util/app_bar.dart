@@ -2,6 +2,7 @@
 
 import 'dart:math';
 
+import 'package:brocast_web/views/features.dart';
 import 'package:brocast_web/views/home_page.dart';
 import 'package:brocast_web/views/privacy.dart';
 import 'package:brocast_web/views/terms.dart';
@@ -98,7 +99,7 @@ Widget topAppBarRow(BuildContext context, int page) {
           child: InkWell(
             onTap: () {
               if (page != 1) {
-                Navigator.pushNamed(context, "/");
+                Navigator.pushNamed(context, Features.route);
               }
             },
             child: Container(

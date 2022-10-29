@@ -1,4 +1,5 @@
 import 'package:brocast_web/views/contact.dart';
+import 'package:brocast_web/views/features.dart';
 import 'package:brocast_web/views/home_page.dart';
 import 'package:brocast_web/views/privacy.dart';
 import 'package:brocast_web/views/terms.dart';
@@ -21,6 +22,7 @@ void main() {
         initialRoute: '/',
         routes: {
           HomePage.route: (context) => const HomePage(),
+          Features.route: (context) => const Features(),
           Privacy.route: (context) => const Privacy(),
           Terms.route: (context) => const Terms(),
           Contact.route: (context) => const Contact()
