@@ -1,6 +1,8 @@
 import 'package:brocast_web/views/features.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../util/app_bar.dart';
+import '../util/bottom_navigation.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -39,8 +41,7 @@ class HomePageState extends State<HomePage> {
                 textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 backgroundColor: Colors.orange,
                 minimumSize: Size(200, 60),
-                shadowColor: Colors
-                    .grey,
+                shadowColor: Colors.orangeAccent.shade100,
                 elevation: 5,
                 side: BorderSide(
                     color: Colors.orangeAccent.shade400,
@@ -55,6 +56,7 @@ class HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(height: 50),
+            bottomNavigation(context, width)
           ],
         ),
       ),
@@ -92,6 +94,7 @@ class HomePageState extends State<HomePage> {
               width: width,
               child: brocastTextView(width)
           ),
+          SizedBox(height: 50),
           Container(
               width: width,
               child: brocastImageView(width)
@@ -124,7 +127,8 @@ class HomePageState extends State<HomePage> {
           SizedBox(height: 20),
           InkWell(
             onTap: () {
-              print("tapped android");
+              final Uri url = Uri.parse('https://play.google.com/store/apps/details?id=nl.brocast');
+              _launchUrl(url);
             },
             child: Row(
               children: [
@@ -150,7 +154,8 @@ class HomePageState extends State<HomePage> {
           SizedBox(height: 10),
           InkWell(
             onTap: () {
-              print("tapped ios");
+              final Uri url = Uri.parse('https://apps.apple.com/nl/app/brocast/id1571745515?platform=iphone');
+              _launchUrl(url);
             },
             child: Row(
               children: [
@@ -188,5 +193,12 @@ class HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+}
+
+
+Future<void> _launchUrl(Uri url) async {
+  if (!await launchUrl(url)) {
+    throw 'Could not launch $url';
   }
 }
