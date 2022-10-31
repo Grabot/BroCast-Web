@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../util/app_bar.dart';
+import '../util/bottom_navigation.dart';
 import '../util/logo.dart';
 
 
@@ -205,6 +206,7 @@ class _PrivacyState extends State<Privacy> {
                 ),
               ),
             ),
+            bottomNavigation(context, width)
           ],
         ),
       ),

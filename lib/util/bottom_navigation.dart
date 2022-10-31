@@ -98,7 +98,7 @@ Widget brocastColumn(BuildContext context, double brocastWidth) {
             style: TextStyle(color: Colors.white, fontSize: 18),
           ),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: 10),
       ],
     ),
   );
@@ -137,7 +137,7 @@ Widget zwaarColumn(BuildContext context, double zwaarWidth) {
             style: TextStyle(color: Colors.white, fontSize: 18)
           ),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: 10),
       ],
     ),
   );
@@ -176,7 +176,7 @@ Widget downloadColumn(BuildContext context, double downloadWidth) {
             style: TextStyle(color: Colors.white, fontSize: 18)
           ),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: 10),
       ],
     ),
   );

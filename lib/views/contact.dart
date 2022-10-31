@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../util/app_bar.dart';
+import '../util/bottom_navigation.dart';
 import '../util/logo.dart';
 
 
@@ -60,6 +61,7 @@ class _ContactState extends State<Contact> {
                   ),
                 ),
               ),
+              bottomNavigation(context, width)
             ],
           )
         ),
