@@ -77,6 +77,24 @@ class FeaturesState extends State<Features> {
     return Container(
       width: boxWidth,
       height: boxWidth,
+      child: Column(
+        children: [
+          SizedBox(height: 15),
+          Text(
+            "TEXTS",
+            style: TextStyle(color: Color(0xfff1f1f1), fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 15),
+          Text(
+            "Simple, Emotional, \nReliable messaging",
+            style: TextStyle(color: Color(0xfff1f1f1), fontSize: 30, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 15),
+          Text(
+            "Whether they are family or classmates or from somewhere else. Male or female or somewhere in between, everyone can be your bro. Now you can message all of your bros for free over the internet! Brocast uses your phone's Internet connection to send messages without fees!",            style: TextStyle(color: Color(0xfff1f1f1), fontSize: 18),
+          ),
+        ],
+      ),
     );
   }
 
