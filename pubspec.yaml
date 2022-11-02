@@ -69,6 +69,10 @@ flutter:
     - assets/images/android.png
     - assets/images/apple.png
     - assets/images/Brocast_promo.png
+    - assets/images/Brocast_photo_promo.png
+    - assets/images/Brocast_Emotion.png
+    - assets/images/Brocast_enjoyment.png
+    - assets/images/Brocast_Bro.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
