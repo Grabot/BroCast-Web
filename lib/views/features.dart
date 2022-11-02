@@ -15,6 +15,8 @@ class Features extends StatefulWidget {
 
 class FeaturesState extends State<Features> {
 
+  Color textColour = Color(0xff686868);
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -29,23 +31,51 @@ class FeaturesState extends State<Features> {
       appBar: appBarAgeOfGold(context, 1),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(
-              children: [
-                addPadding ? SizedBox(width: sidesPadding) : Container(),
-                firstColumn((centerWidth / 2) - 15),
-                SizedBox(width: 30),
-                secondColumn((centerWidth / 2) - 15),
-                addPadding ? SizedBox(width: sidesPadding) : Container(),
-              ],
-            ),
+          children: [
+            featureContent(addPadding, sidesPadding, centerWidth, width),
             SizedBox(height: 50),
             bottomNavigation(context, width)
           ],
-        ),
+        )
       ),
     );
+  }
+
+  Widget featureContent(bool addPadding, double sidesPadding, double centerWidth, double width) {
+    if (width < 800) {
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 80),
+        child: Column(
+          children: [
+            textBox(centerWidth-40),
+            SizedBox(height: 30),
+            photosBox(centerWidth-40),
+            SizedBox(height: 30),
+            broupBox(centerWidth-40),
+            SizedBox(height: 30),
+            securityBox(centerWidth-40),
+            SizedBox(height: 30),
+            openSourceBox(centerWidth-40),
+          ],
+        ),
+      );
+    } else {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              addPadding ? SizedBox(width: sidesPadding) : Container(),
+              firstColumn((centerWidth / 2) - 15),
+              SizedBox(width: 30),
+              secondColumn((centerWidth / 2) - 15),
+              addPadding ? SizedBox(width: sidesPadding) : Container(),
+            ],
+          ),
+        ],
+      );
+    }
   }
 
   Widget firstColumn(double columnWidth) {
@@ -67,18 +97,20 @@ class FeaturesState extends State<Features> {
       child: Column(
         children: [
           broupBox(columnWidth),
-          securityBox(columnWidth)
+          SizedBox(height: 30),
+          securityBox(columnWidth),
+          SizedBox(height: 30),
+          openSourceBox(columnWidth)
         ],
       ),
     );
   }
 
   Widget textBox(double boxWidth) {
-    Color textColour = Color(0xff686868);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 80),
       width: boxWidth,
-      color: Colors.orange.shade100,
+      color: Colors.orange.shade200,
       child: Column(
         children: [
           SizedBox(height: 80),
@@ -107,7 +139,7 @@ class FeaturesState extends State<Features> {
           ),
           SizedBox(height: 30),
           SizedBox(
-            height: boxWidth+200,
+            width: boxWidth,
             child: Image(
               image: AssetImage("assets/images/Brocast_promo.png"),
             ),
@@ -119,13 +151,13 @@ class FeaturesState extends State<Features> {
   }
 
   Widget broupBox(double boxWidth) {
-    Color textColour = Color(0xff686868);
     double pictureWidth = boxWidth/4;
     pictureWidth -= 40;
+    print("picture: $pictureWidth");
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 80),
       width: boxWidth,
-      color: Colors.green.shade100,
+      color: Colors.green.shade200,
       child: Column(
           children: [
           SizedBox(height: 80),
@@ -148,8 +180,8 @@ class FeaturesState extends State<Features> {
           ),
           SizedBox(height: 80),
           Row(
+              mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width: pictureWidth),
               Column(
                 children: [
                   SizedBox(
@@ -204,7 +236,6 @@ class FeaturesState extends State<Features> {
                   ),
                 ],
               ),
-              SizedBox(width: pictureWidth),
             ],
           ),
           SizedBox(height: 80),
@@ -214,15 +245,14 @@ class FeaturesState extends State<Features> {
   }
 
   Widget photosBox(double boxWidth) {
-    Color textColour = Color(0xff686868);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 80),
-      color: Colors.blue.shade100,
+      color: Colors.blue.shade200,
       width: boxWidth,
       child: Column(
         children: [
           SizedBox(
-            height: boxWidth-150,
+            width: boxWidth,
             child: Image(
               image: AssetImage("assets/images/Brocast_photo_promo.png"),
             ),
@@ -253,8 +283,76 @@ class FeaturesState extends State<Features> {
 
   Widget securityBox(double boxWidth) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 80),
+      color: Color(0xFF51cce0),
       width: boxWidth,
-      height: boxWidth,
+      child: Column(
+        children: [
+          SizedBox(height: 30),
+          SizedBox(
+            child: Image.asset(
+              'assets/images/security.gif',
+              width: boxWidth,
+            ),
+          ),
+          SizedBox(height: 30),
+          Text(
+            "END-TO-END ENCRYPTION",
+            style: TextStyle(color: textColour, fontSize: 20, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 15),
+          Text(
+            "Security by Default",
+            style: TextStyle(color: textColour, fontSize: 30, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 15),
+          Text(
+            "Some of your most personal emotions are shared on Brocast with your bros, which is why we built end-to-end encryption into our app. When end-to-end encrypted, your messages are secured so only you and your bro you're communicating with can read to your emotions. Once everyone has read the message it is stored on your phones and all other traces are completely removed",
+            style: TextStyle(color: textColour, fontSize: 18),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 80),
+        ]
+      )
+    );
+  }
+
+  Widget openSourceBox(double boxWidth) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 80),
+      color: Colors.red.shade200,
+      width: boxWidth,
+      child: Column(
+        children: [
+          SizedBox(
+            child: Image.asset(
+              'assets/images/brocast_transparent.png',
+              height: boxWidth/2,
+              width: boxWidth,
+            ),
+          ),
+          Text(
+            "TRANSPARENT",
+            style: TextStyle(color: textColour, fontSize: 20, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 15),
+          Text(
+            "Open Source software",
+            style: TextStyle(color: textColour, fontSize: 30, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 15),
+          Text(
+            "Transparency is an important aspect of Zwaar Developers, the creator op Brocast. All of the code can be seen on their github page for both the frontend (Android, IOS) and the backend",
+            style: TextStyle(color: textColour, fontSize: 18),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 80),
+        ],
+      )
     );
   }
 }
