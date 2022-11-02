@@ -42,7 +42,7 @@ Widget logo(double maxWidth) {
                 height: logoHeight,
                 width: logoWidth-50,
                 child: const Image(
-                  image: AssetImage("assets/images/Zwaar_4.png"),
+                  image: AssetImage("assets/images/Zwaar.png"),
                 ),
               ),
               Text(

@@ -30,12 +30,14 @@ class FeaturesState extends State<Features> {
     return Scaffold(
       appBar: appBarAgeOfGold(context, 1),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            featureContent(addPadding, sidesPadding, centerWidth, width),
-            SizedBox(height: 50),
-            bottomNavigation(context, width)
-          ],
+        child: SelectionArea(
+          child: Column(
+            children: [
+              featureContent(addPadding, sidesPadding, centerWidth, width),
+              SizedBox(height: 50),
+              bottomNavigation(context, width)
+            ],
+          ),
         )
       ),
     );
