@@ -46,18 +46,18 @@ class FeaturesState extends State<Features> {
   Widget featureContent(bool addPadding, double sidesPadding, double centerWidth, double width) {
     if (width < 800) {
       return Container(
-        padding: EdgeInsets.symmetric(horizontal: 80),
+        padding: EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
-            textBox(centerWidth-40),
+            textBox(centerWidth-40, 20),
             SizedBox(height: 30),
-            photosBox(centerWidth-40),
+            photosBox(centerWidth-40, 20),
             SizedBox(height: 30),
-            broupBox(centerWidth-40),
+            broupBox(centerWidth-40, 20),
             SizedBox(height: 30),
-            securityBox(centerWidth-40),
+            securityBox(centerWidth-40, 20),
             SizedBox(height: 30),
-            openSourceBox(centerWidth-40),
+            openSourceBox(centerWidth-40, 20),
           ],
         ),
       );
@@ -85,9 +85,9 @@ class FeaturesState extends State<Features> {
       width: columnWidth,
       child: Column(
         children: [
-          textBox(columnWidth),
+          textBox(columnWidth, 80),
           SizedBox(height: 30),
-          photosBox(columnWidth),
+          photosBox(columnWidth, 80),
         ],
       ),
     );
@@ -98,19 +98,19 @@ class FeaturesState extends State<Features> {
       width: columnWidth,
       child: Column(
         children: [
-          broupBox(columnWidth),
+          broupBox(columnWidth, 80),
           SizedBox(height: 30),
-          securityBox(columnWidth),
+          securityBox(columnWidth, 80),
           SizedBox(height: 30),
-          openSourceBox(columnWidth)
+          openSourceBox(columnWidth, 80)
         ],
       ),
     );
   }
 
-  Widget textBox(double boxWidth) {
+  Widget textBox(double boxWidth, double padding) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 80),
+      padding: EdgeInsets.symmetric(horizontal: padding),
       width: boxWidth,
       color: Colors.orange.shade200,
       child: Column(
@@ -152,12 +152,12 @@ class FeaturesState extends State<Features> {
     );
   }
 
-  Widget broupBox(double boxWidth) {
+  Widget broupBox(double boxWidth, double padding) {
     double pictureWidth = boxWidth/4;
     pictureWidth -= 40;
     print("picture: $pictureWidth");
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 80),
+      padding: EdgeInsets.symmetric(horizontal: padding),
       width: boxWidth,
       color: Colors.green.shade200,
       child: Column(
@@ -246,9 +246,9 @@ class FeaturesState extends State<Features> {
     );
   }
 
-  Widget photosBox(double boxWidth) {
+  Widget photosBox(double boxWidth, double padding) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 80),
+      padding: EdgeInsets.symmetric(horizontal: padding),
       color: Colors.blue.shade200,
       width: boxWidth,
       child: Column(
@@ -283,9 +283,9 @@ class FeaturesState extends State<Features> {
     );
   }
 
-  Widget securityBox(double boxWidth) {
+  Widget securityBox(double boxWidth, double padding) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 80),
+      padding: EdgeInsets.symmetric(horizontal: padding),
       color: Color(0xFF51cce0),
       width: boxWidth,
       child: Column(
@@ -321,9 +321,9 @@ class FeaturesState extends State<Features> {
     );
   }
 
-  Widget openSourceBox(double boxWidth) {
+  Widget openSourceBox(double boxWidth, double padding) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 80),
+      padding: EdgeInsets.symmetric(horizontal: padding),
       color: Colors.red.shade200,
       width: boxWidth,
       child: Column(
