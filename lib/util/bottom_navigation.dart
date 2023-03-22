@@ -17,6 +17,9 @@ Widget bottomNavigation(BuildContext context, double width) {
     addPadding = false;
   }
 
+  DateTime now = new DateTime.now();
+  int currentYear = now.year;
+
   return Container(
     color: Colors.blueGrey,
     child: Column(
@@ -37,7 +40,7 @@ Widget bottomNavigation(BuildContext context, double width) {
             Container(
               padding: const EdgeInsets.all(16),
               child: Text(
-                "2022 © Zwaar Developers",
+                "$currentYear © Zwaar Developers",
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
             )
