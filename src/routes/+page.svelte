@@ -5,9 +5,7 @@
 <div class="container">
     <div class="text">
         <div class="large-text">
-            Simple. Secure. 
-            Emotional. 
-            Reliable messaging.
+            Simple. Secure. Emotional. Reliable messaging.
         </div>
         <br>
         <div class="small-text">
@@ -39,15 +37,7 @@
 </div>
 
 <style>
-    /* body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        padding: 100px;
-    } */
+    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
     .container {
         display: flex;
         align-items: center;
@@ -110,12 +100,12 @@
         cursor: pointer;
         margin-top: 20px;
         transition: box-shadow 0.3s, transform 0.3s;
-        display: inline-block; /* Ensure the button only takes up the space it needs */
+        display: inline-block;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
         text-decoration: none;
-        width: auto; /* Allow the width to adjust based on content */
+        width: auto;
         text-align: center;
         margin-bottom: 100px;
     }
@@ -128,5 +118,29 @@
     .button-container {
         width: 100%;
         text-align: center;
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            padding: 20px;
+        }
+        .text {
+            margin-right: 0;
+            text-align: center;
+        }
+        .large-text, .small-text {
+            width: 100%;
+        }
+        .image img {
+            height: auto;
+            width: 100%;
+            margin-left: 0;
+            margin-top: 20px;
+        }
+        .button-container {
+            margin-bottom: 20px;
+        }
     }
 </style>
