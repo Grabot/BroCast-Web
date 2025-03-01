@@ -83,7 +83,6 @@
 <style>
     .container {
         display: flex;
-        flex-wrap: wrap;
         gap: 30px;
         max-width: 1200px; /* Limit the max width for better readability */
         margin-left: auto;
@@ -92,6 +91,7 @@
         margin-bottom: 100px;
         padding-left: 15px; /* Add padding to the left */
         padding-right: 15px; /* Add padding to the right */
+        justify-content: center; /* Add this line */
     }
     .column {
         width: 30vw;

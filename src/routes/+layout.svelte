@@ -129,6 +129,7 @@
     margin: 0;
     font-size: 1.2rem;
     color: white;
+    text-align: center; /* Center the h3 elements */
 }
 
 .copyright {
@@ -195,9 +196,6 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
-}
-
-.hamburger-menu {
     background-color: orange;
     border: none;
 }
@@ -252,13 +250,16 @@
     }
 
     .section {
-        align-items: flex-start;
+        align-items: center; /* Center the section container */
         width: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     .section h3 {
         margin-bottom: 0.5rem;
+        text-align: center; /* Center the h3 elements */
+        font-size: 1.5rem; /* Increase font size */
+        font-weight: bold; /* Make the text bolder */
     }
 
     .bottom-nav-button {
