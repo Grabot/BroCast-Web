@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-  zwaar_app:
+  brocast_app:
     image: node:22.5-alpine
     volumes:
       - type: bind
