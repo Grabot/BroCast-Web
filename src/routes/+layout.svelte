@@ -67,6 +67,7 @@
 </div>
 
 <style>
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 :global(body) {
     margin: 0;
     background-color: #333333;

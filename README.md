@@ -37,6 +37,8 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
-> podman build -t brocast_app . 
-> podman-compose run --rm brocast_app npm install
-> podman-compose up
+## docker example
+
+podman build -t brocast_app . 
+podman-compose run --rm brocast_app npm install
+podman-compose up
