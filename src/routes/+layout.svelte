@@ -14,7 +14,7 @@
 </script>
 
 <div class="page-container">
-    <title>BroCast</title>
+    <title>Brocast</title>
     <header class="topbar">
         <button class="hamburger-menu" on:click={toggleMenu} aria-label="Toggle menu">
             <span class="material-icons">menu</span>
@@ -24,7 +24,7 @@
                 <div class='child'>
                     <img src={brocast_img} alt="Logo" class="logo-image" />
                 </div>
-                <div class='child'>BroCast</div>
+                <div class='child'>Brocast</div>
             </a>
         </div>
         <nav class="nav-buttons" class:open={isMenuOpen}>

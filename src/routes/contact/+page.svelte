@@ -12,7 +12,7 @@
 <div class="container">
     <img class="container_image_brocast" style='--innerWidth:{innerWidth};' src={brocast_logo} alt="Logo" />
 </div>
-<h1 class="centered_text" id="brocast_text" style='--innerWidth:{innerWidth};'><strong><b>BroCast</b></strong></h1>
+<h1 class="centered_text" id="brocast_text" style='--innerWidth:{innerWidth};'><strong><b>Brocast</b></strong></h1>
 <br><br>
 <h1 class="centered_text" id="from_text" style='--innerWidth:{innerWidth};'>From</h1>
 <div>
