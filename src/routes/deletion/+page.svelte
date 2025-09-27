@@ -71,7 +71,7 @@
     }
     .container h2, .success h2, .failure h2, .not-found h2 {
         margin-bottom: 20px;
-        color: #ff4444;
+        color: #1af7ff;
     }
     .container button {
         padding: 10px;

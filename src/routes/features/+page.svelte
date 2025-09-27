@@ -1,11 +1,12 @@
 <script>
-    import text_promo_image from '$lib/images/Brocast_promo.png';
+    import text_promo_image from '$lib/images/web_promo_audio.png';
     import image_promo_image from '$lib/images/Brocast_photo_promo.png';
     import love_icon from '$lib/images/Brocast_Emotion.png';
     import bros_icon from '$lib/images/Brocast_Bro.png';
     import emotion_icon from '$lib/images/Brocast_enjoyment.png';
     import security_gif from '$lib/images/security.gif';
     import brocast_logo from '$lib/images/brocast_transparent.png';
+    import text_promo_share from '$lib/images/web_promo_live_location.png';
 </script>
 
 <div class="container">
@@ -23,10 +24,20 @@
         <div class="column left2">
             <img src={image_promo_image} alt="Brocast Text promo" class="image">
             <div class="text-wrapper">
-                <h1>Photos and Images</h1>
+                <h1>PHOTOS AND IMAGES</h1>
                 <h3>Share Moments that Matter</h3>
                 <p>
                     Send photos and images on Brocast instantly. You can even capture the moments that matter to you most emotionally with a built-in camera. With Brocast, photos and images send quickly even if you're on a slow connection.
+                </p>
+            </div>
+        </div>
+        <div class="column left3">
+            <div class="left3-content">
+                <img src={brocast_logo} alt="Brocast logo" class="image">
+                <h1>TRANSPARENT</h1>
+                <h3>Open Source software</h3>
+                <p>
+                    Transparency is an important aspect of Zwaar Developers, the creator of Brocast. All of the code can be seen on their GitHub page for both the frontend (Android, iOS) and the backend.
                 </p>
             </div>
         </div>
@@ -34,6 +45,26 @@
     <div class="main-column">
         <div class="column right1">
             <div class="right1-content">
+                <h1>SHARE EVERYTHING</h1>
+                <h3>Open up and share your emotions.</h3>
+                <p>
+                    From text to audio to locations and pictures or videos, you can share anything emotional with Brocast!
+                </p>
+                <img src={text_promo_share} alt="Brocast share promo" class="image">
+            </div>
+        </div>
+        <div class="column right2">
+            <div class="right2-content">
+                <img src={security_gif} alt="Security" class="security-image">
+                <h1>END-TO-END ENCRYPTION</h1>
+                <h3>Security by Default</h3>
+                <p>
+                    Some of your most personal emotions are shared on Brocast with your bros, which is why we built end-to-end encryption into our app. When end-to-end encrypted, your messages are secured so only you and your bro you're communicating with can read to your emotions. Once everyone has read the message it is stored on your phones and all other traces are completely removed.
+                </p>
+            </div>
+        </div>
+        <div class="column right3">
+            <div class="right3-content">
                 <h1>BROUP CHAT</h1>
                 <h3>Bro groups to keep in touch</h3>
                 <p>
@@ -55,26 +86,6 @@
                         <p>BROS</p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="column right2">
-            <div class="right2-content">
-                <img src={security_gif} alt="Security" class="security-image">
-                <h1>END-TO-END ENCRYPTION</h1>
-                <h3>Security by Default</h3>
-                <p>
-                    Some of your most personal emotions are shared on Brocast with your bros, which is why we built end-to-end encryption into our app. When end-to-end encrypted, your messages are secured so only you and your bro you're communicating with can read to your emotions. Once everyone has read the message it is stored on your phones and all other traces are completely removed.
-                </p>
-            </div>
-        </div>
-        <div class="column right3">
-            <div class="right3-content">
-                <img src={brocast_logo} alt="Brocast logo" class="image">
-                <h1>TRANSPARENT</h1>
-                <h3>Open Source software</h3>
-                <p>
-                    Transparency is an important aspect of Zwaar Developers, the creator of Brocast. All of the code can be seen on their GitHub page for both the frontend (Android, iOS) and the backend.
-                </p>
             </div>
         </div>
     </div>
@@ -114,7 +125,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-bottom: 30px;
     }
-    .left1, .left2 {
+    .left1, .left2, .left3 {
         background-color: #ffcc80;
         flex-direction: column;
         justify-content: center;
@@ -130,22 +141,22 @@
     .left2 {
         background-color: #90caf9;
     }
-    .text-wrapper, .right1-content, .right2-content, .right3-content {
+    .text-wrapper, .right1-content, .right2-content, .right3-content, .left3-content {
         width: 70%;
         margin: 0 auto;
     }
-    .left1 h1, .left2 h1, .right1 h1, .right2 h1, .right3 h1 {
+    .left1 h1, .left2 h1, .right1 h1, .right2 h1, .right3 h1, .left3 h1 {
         color: #4f4f4f;
         font-size: 1em;
         margin-bottom: 5px;
         margin-top: 80px;
     }
-    .left1 h3, .left2 h3, .right1 h3, .right2 h3, .right3 h3 {
+    .left1 h3, .left2 h3, .right1 h3, .right2 h3, .right3 h3, .left3 h3 {
         color: #4f4f4f;
         font-size: 1.2em;
         margin-bottom: 10px;
     }
-    .left1 p, .left2 p, .right1 p, .right2 p, .right3 p {
+    .left1 p, .left2 p, .right1 p, .right2 p, .right3 p, .left3 p {
         color: #505050;
         font-size: 0.7em;
         margin-bottom: 15px;
@@ -153,6 +164,10 @@
     }
     .left1 .image, .left2 .image {
         width: 80%;
+        height: auto;
+    }
+    .right1 .image {
+        width: 100%;
         height: auto;
     }
     .icons {
@@ -186,6 +201,9 @@
     .right3 {
         background-color: #ef9a9a;
     }
+    .left3 {
+        background-color: #b39ddb;
+    }
     .security-image {
         margin-top: 20px;
         width: 80%;
@@ -209,7 +227,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .text-wrapper, .right1-content, .right2-content, .right3-content {
+        .text-wrapper, .right1-content, .right2-content, .right3-content, .left3-content {
             width: 100%; /* Adjust width to 100% for better readability */
         }
     }
